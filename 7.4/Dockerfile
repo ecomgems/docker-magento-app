@@ -1,4 +1,4 @@
-FROM webdevops/php-nginx-dev:7.3
+FROM webdevops/php-nginx-dev:7.4
 
 MAINTAINER Igor Goltsov <igor@ecomgems.com>
 
@@ -8,7 +8,7 @@ RUN set -x \
     && pecl uninstall xdebug \
     && pecl install -f xdebug-2.9.8 \
     && apt update \
-    && apt install --assume-yes htop mc lsof default-mysql-client \
+    && apt install --assume-yes pv unzip htop mc lsof default-mysql-client \
     && docker-image-cleanup
 
 COPY conf/etc/nginx/vhost.conf /opt/docker/etc/nginx/vhost.conf
