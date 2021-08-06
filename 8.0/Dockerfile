@@ -6,7 +6,7 @@ ENV WEB_DOCUMENT_ROOT=/phpapp
 RUN sed -i 's/user www-data;/user application;/g' /etc/nginx/nginx.conf
 RUN set -x \
     && apt update \
-    && apt install --assume-yes htop pv unzip mc lsof default-mysql-client \
+    && apt install --assume-yes pv unzip htop mc lsof default-mysql-client nodejs npm \
     && docker-image-cleanup
 
 RUN echo 'Install n98-magerun2.phar' \

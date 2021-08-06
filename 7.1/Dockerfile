@@ -8,7 +8,7 @@ RUN set -x \
     && pecl uninstall xdebug \
     && pecl install -f xdebug-2.9.8 \
     && apt update \
-    && apt install --assume-yes pv unzip htop mc lsof default-mysql-client \
+    && apt install --assume-yes pv unzip htop mc lsof default-mysql-client nodejs npm \
     && docker-image-cleanup
 
 RUN echo 'Install n98-magerun2.phar' \
