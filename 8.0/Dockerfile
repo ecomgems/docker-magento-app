@@ -4,6 +4,7 @@ MAINTAINER Igor Goltsov <igor@ecomgems.com>
 
 ENV WEB_DOCUMENT_ROOT=/phpapp
 RUN sed -i 's/user www-data;/user application;/g' /etc/nginx/nginx.conf
+RUN sed -i 's/user  nginx;/user  application;/g' /etc/nginx/nginx.conf
 RUN set -x \
     && apt update \
     && apt install --assume-yes pv unzip htop mc lsof default-mysql-client nodejs npm \
